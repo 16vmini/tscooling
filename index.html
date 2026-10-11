@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>T S Cooling Solutions | Air Conditioning & Heating</title>
+<meta name="description" content="T S Cooling Solutions specialises in energy efficient heating and cooling for homes and businesses. Air conditioning installation, servicing and repairs. Free quotes and honest advice.">
+<meta name="theme-color" content="#1f3550">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta property="og:title" content="T S Cooling Solutions">
+<meta property="og:description" content="Energy efficient heating and cooling for homes and businesses. Free quotes and honest advice.">
+<meta property="og:image" content="assets/logo-original.jpg">
+<style>
+  :root{
+    --navy:#1f3550; --navy-2:#2b4a6f; --orange:#f07a3a; --ice:#eef4f9; --ink:#17212b; --mute:#5b6b7a;
+    --bg:#ffffff; --card:#ffffff; --line:#dbe4ec; --star:#f5a623; --hdr:#ffffff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ice:#0f2033; --ink:#e8eef4; --mute:#9db0c2; --bg:#0a1724; --card:#12263b; --line:#22405e; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);-webkit-text-size-adjust:100%}
+  img{max-width:100%;display:block}
+  a{color:var(--orange)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+
+  /* Header (always white so the logo reads) */
+  header{position:sticky;top:0;background:var(--hdr);z-index:50;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo img{height:56px;width:auto}
+  nav{display:flex;align-items:center;gap:22px}
+  nav a{color:var(--navy);text-decoration:none;font-weight:600;font-size:15px}
+  nav a:hover{color:var(--orange)}
+  .menu-btn{display:none;background:none;border:0;padding:10px;cursor:pointer}
+  .menu-btn span{display:block;width:24px;height:3px;background:var(--navy);margin:4px 0;border-radius:2px;transition:.2s}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--orange);color:#fff !important;padding:13px 22px;border-radius:10px;text-decoration:none;font-weight:700;border:0;cursor:pointer;font-size:16px;min-height:48px}
+  .btn:hover{filter:brightness(1.08)}
+  .btn.ghost{background:rgba(255,255,255,.08);border:2px solid #fff}
+  .btn.sm{padding:8px 16px;min-height:40px;font-size:15px}
+
+  /* Hero */
+  .hero{position:relative;color:#fff;padding:96px 0;background:linear-gradient(100deg,rgba(20,36,56,.94) 0%,rgba(31,53,80,.82) 55%,rgba(31,53,80,.45) 100%),url(assets/gallery/job-13.jpg) center/cover no-repeat}
+  .hero h1{font-size:clamp(30px,5.5vw,52px);line-height:1.12;margin:0 0 16px;max-width:680px}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .hero p{font-size:clamp(16px,2.2vw,19px);max-width:560px;color:#dbe7f2;margin:0 0 28px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+  .badge{background:rgba(255,255,255,.14);padding:6px 14px;border-radius:99px;font-size:14px}
+
+  section{padding:68px 0}
+  section.alt{background:var(--ice)}
+  h2{font-size:clamp(26px,4vw,34px);margin:0 0 8px;line-height:1.2}
+  .lead{color:var(--mute);margin:0 0 32px;max-width:660px}
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h3{margin:0 0 6px;font-size:18px}
+  .card p{margin:0;color:var(--mute);font-size:15px}
+  .icon{width:48px;height:48px;border-radius:12px;background:rgba(240,122,58,.12);display:grid;place-items:center;font-size:24px;margin-bottom:12px}
+
+  .brands{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:28px;color:var(--mute);font-size:15px}
+  .brand{font-weight:800;letter-spacing:2px;color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 18px;font-size:18px}
+
+  /* Offer */
+  .offer{display:grid;gap:28px;grid-template-columns:minmax(0,420px) 1fr;align-items:center}
+  .offer img{border-radius:14px;width:100%;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+
+  /* Gallery */
+  .gallery{display:grid;gap:10px;grid-template-columns:repeat(4,1fr)}
+  .gallery button{padding:0;border:0;background:none;cursor:zoom-in;border-radius:12px;overflow:hidden;aspect-ratio:3/4}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+  .gallery button:hover img{transform:scale(1.04)}
+  .lightbox{position:fixed;inset:0;background:rgba(5,12,20,.92);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-height:88vh;max-width:100%;border-radius:10px}
+  .lb-close,.lb-nav{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:24px;cursor:pointer}
+  .lb-close{top:16px;right:16px}
+  .lb-prev{left:12px;top:50%;transform:translateY(-50%)}
+  .lb-next{right:12px;top:50%;transform:translateY(-50%)}
+
+  /* Steps */
+  .steps{counter-reset:s;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .step{position:relative;padding-left:54px}
+  .step::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:700}
+  .step h3{margin:0 0 4px;font-size:17px}
+  .step p{margin:0;color:var(--mute);font-size:15px}
+
+  /* Reviews */
+  .stars{color:var(--star);letter-spacing:2px}
+  .review p{color:var(--ink);font-size:15px;margin:8px 0 12px}
+  .review .who{font-weight:700;font-size:14px}
+  .review .when{color:var(--mute);font-size:13px}
+  .score{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+  .score b{font-size:38px;color:var(--orange)}
+
+  /* Contact */
+  .contact{display:grid;gap:32px;grid-template-columns:1.2fr 1fr}
+  form{display:grid;gap:12px}
+  input,select,textarea{width:100%;padding:13px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:16px;background:var(--card);color:var(--ink)}
+  label{font-size:14px;font-weight:600}
+  .contact-list{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:12px}
+  .contact-list a{color:var(--ink);text-decoration:none;font-weight:600}
+  .todo{background:#fff3cd;color:#6b4e00;padding:1px 6px;border-radius:4px}
+
+  footer{background:var(--navy);color:#b7c7d8;padding:28px 0 28px;font-size:14px}
+  footer a{color:#fff}
+
+  /* Mobile bottom action bar */
+  .mobile-bar{display:none}
+
+  @media (max-width:860px){
+    .gallery{grid-template-columns:repeat(3,1fr)}
+    .offer,.contact{grid-template-columns:1fr}
+    .offer img{max-width:420px;margin:0 auto}
+  }
+  @media (max-width:720px){
+    .menu-btn{display:block}
+    nav{position:absolute;top:68px;left:0;right:0;background:var(--hdr);flex-direction:column;align-items:stretch;gap:0;padding:8px 16px 16px;box-shadow:0 10px 20px rgba(0,0,0,.12);display:none}
+    nav.open{display:flex}
+    nav a{padding:14px 4px;border-bottom:1px solid #eef1f4;font-size:17px}
+    nav .btn{margin-top:12px;border-bottom:0}
+    .logo img{height:48px}
+    .hero{padding:64px 0 56px;background-position:65% center}
+    .cta .btn{flex:1 1 100%}
+    section{padding:52px 0}
+    .gallery{grid-template-columns:repeat(2,1fr);gap:8px}
+    body{padding-bottom:72px}
+    .mobile-bar{display:grid;grid-template-columns:1fr 1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--navy);padding:8px 8px calc(8px + env(safe-area-inset-bottom));gap:8px;box-shadow:0 -4px 16px rgba(0,0,0,.2)}
+    .mobile-bar a{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:6px;border-radius:10px;min-height:52px}
+    .mobile-bar a span{font-size:20px;line-height:1}
+    .mobile-bar a.q{background:var(--orange)}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="T S Cooling Solutions home"><img src="assets/logo.png" alt="T S Cooling Solutions" width="600" height="376"></a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    <nav id="nav">
+      <a href="#services">Services</a>
+      <a href="#work">Our work</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a class="btn sm" href="#contact">Free quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <h1>Energy efficient <em>heating &amp; cooling</em> for homes and businesses</h1>
+    <p>Air conditioning installation, servicing and repairs. Honest advice, free quotes and a neat, professional install.</p>
+    <div class="cta">
+      <a class="btn" href="#contact">Get a free quote</a>
+      <a class="btn ghost" href="tel:+447546957344">📞 07546 957344</a>
+    </div>
+    <div class="badges">
+      <span class="badge">⭐ 100% recommended</span>
+      <span class="badge">Fast installs, often within days</span>
+      <span class="badge">Hitachi &amp; Samsung</span>
+    </div>
+  </div>
+</div>
+
+<!-- TODO: remove or update this offer once the End of Summer sale finishes -->
+<section class="alt" id="offer" style="padding:44px 0">
+  <div class="wrap offer">
+    <img src="assets/end-of-summer-sale.png" alt="End of Summer Sale: 10% off installs for all remaining stock" loading="lazy">
+    <div>
+      <h2>End of Summer Sale: 10% off installs</h2>
+      <p class="lead" style="margin-bottom:18px">10% off installs on all remaining stock. Systems to suit every budget, energy efficient, with cooling and heating all year round. Limited stock, so don't miss out.</p>
+      <a class="btn" href="#contact">Claim the offer</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What we do</h2>
+    <p class="lead">Whether it's a single bedroom or a whole office, we'll recommend the right system for your space and budget.</p>
+    <div class="grid">
+      <div class="card"><div class="icon">❄️</div><h3>Air conditioning installation</h3><p>Supply and neat installation of efficient wall-mounted systems for bedrooms, living rooms, offices and more.</p></div>
+      <div class="card"><div class="icon">🔥</div><h3>Heating &amp; cooling all year</h3><p>Modern air conditioning that cools in summer and heats efficiently in winter.</p></div>
+      <div class="card"><div class="icon">🔧</div><h3>Servicing &amp; repairs</h3><p>Keep your system running efficiently, or get it back up and running quickly.</p></div>
+      <div class="card"><div class="icon">🏢</div><h3>Commercial</h3><p>Systems for business premises, from small offices to ceiling cassette units.</p></div>
+      <div class="card"><div class="icon">💷</div><h3>Systems for every budget</h3><p>Options to suit what you want to spend, with a clear and fair price up front.</p></div>
+      <div class="card"><div class="icon">💬</div><h3>Free quotes &amp; honest advice</h3><p>No pushy sales. We'll tell you what you actually need and why.</p></div>
+    </div>
+    <div class="brands">Brands we fit: <span class="brand">HITACHI</span><span class="brand">SAMSUNG</span></div>
+    <!-- TODO: confirm with Tom: other brands, F-Gas / REFCOM registration, warranty details -->
+  </div>
+</section>
+
+<section id="work" class="alt">
+  <div class="wrap">
+    <h2>Recent installs</h2>
+    <p class="lead">A few of our recent jobs, with tidy pipework and careful installation every time.</p>
+    <div class="gallery">
+      <button data-i="0"><img src="assets/gallery/job-13.jpg" alt="Wall-mounted air conditioning unit in a living room" loading="lazy"></button>
+      <button data-i="1"><img src="assets/gallery/job-31.jpg" alt="Air conditioning unit in a nursery" loading="lazy"></button>
+      <button data-i="2"><img src="assets/gallery/job-28.jpg" alt="Air conditioning unit in a bedroom" loading="lazy"></button>
+      <button data-i="3"><img src="assets/gallery/job-03.jpg" alt="Neat outdoor unit and pipework on a brick wall" loading="lazy"></button>
+      <button data-i="4"><img src="assets/gallery/job-11.jpg" alt="Indoor unit in a hallway" loading="lazy"></button>
+      <button data-i="5"><img src="assets/gallery/job-42.jpg" alt="Outdoor condenser unit mounted on a wall bracket" loading="lazy"></button>
+      <button data-i="6"><img src="assets/gallery/job-33.jpg" alt="Air conditioning in a lounge" loading="lazy"></button>
+      <button data-i="7"><img src="assets/gallery/job-51.jpg" alt="Commercial ceiling cassette air conditioning install" loading="lazy"></button>
+      <button data-i="8"><img src="assets/gallery/job-45.jpg" alt="Indoor unit installed above a doorway" loading="lazy"></button>
+      <button data-i="9"><img src="assets/gallery/job-29.jpg" alt="Outdoor unit on ground-level stand" loading="lazy"></button>
+      <button data-i="10"><img src="assets/gallery/job-50.jpg" alt="Air conditioning unit in a bedroom" loading="lazy"></button>
+      <button data-i="11"><img src="assets/gallery/job-21.jpg" alt="Commercial rooftop air conditioning unit" loading="lazy"></button>
+    </div>
+    <p style="margin-top:20px"><a href="https://www.facebook.com/p/T-S-Cooling-Solutions-61582634784448/" target="_blank" rel="noopener">See more on our Facebook page →</a></p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="lead">Simple, quick and no fuss.</p>
+    <div class="steps">
+      <div class="step"><h3>Get in touch</h3><p>Call, WhatsApp or fill in the form, and tell us about your space.</p></div>
+      <div class="step"><h3>Survey &amp; quote</h3><p>We visit, recommend the right system and give you a clear, fair price.</p></div>
+      <div class="step"><h3>Installation</h3><p>Booked in as soon as possible, with care and respect for your property.</p></div>
+      <div class="step"><h3>Enjoy the comfort</h3><p>Cool in summer, warm in winter, and efficient all year.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="alt">
+  <div class="wrap">
+    <h2>What customers say</h2>
+    <div class="score"><b>100%</b><div><span class="stars">★★★★★</span><br><span style="color:var(--mute);font-size:14px">of Facebook reviewers recommend us, and 5-star reviews on Google</span></div></div>
+    <div class="grid">
+      <div class="card review"><span class="stars">★★★★★</span>
+        <p>"Amazing experience from start to finish, with great communication. We were really struggling in the recent heatwave with our newborn and T S Cooling Solutions were able to fit our aircon unit in within days. Can't tell you how life changing it is already!! If you've been thinking about getting aircon, this is your sign that you won't regret it. We couldn't recommend Tom enough."</p>
+        <div class="who">Olivia Smith</div><div class="when">Facebook</div></div>
+      <div class="card review"><span class="stars">★★★★★</span>
+        <p>"T S Cooling solutions were incredibly professional, Tom gave great advice to help achieve our desired aim - the installation was squeezed into his schedule at the earliest possibility and it was very neat with great care and respect to our property. Very happy with the result and would highly recommend!"</p>
+        <div class="who">Seb Harris</div><div class="when">Facebook</div></div>
+      <div class="card review"><span class="stars">★★★★★</span>
+        <p>"Really good experience with TS Cooling. Tom is a nice honest guy, gave us great advice on what to go for, reasonably priced, very professional when it came to the install. It's a very busy time for A/C at the moment and he made every effort to get us quoted and installed quickly. Highly recommend"</p>
+        <div class="who">Angelo Duarte</div><div class="when">Facebook &amp; Google</div></div>
+      <div class="card review"><span class="stars">★★★★★</span>
+        <p>"Great service from Tom. Efficient, professional and a tidy finish. Thanks so much. Highly recommend."</p>
+        <div class="who">Lauren Bone</div><div class="when">Facebook</div></div>
+      <!-- Google reviews below are truncated at "… More" in the source; replace with full text when available -->
+      <div class="card review"><span class="stars">★★★★★</span>
+        <p>"Absolutely over the moon with our air con, from quote to the finished product he was very friendly, professional and knowledgeable! As soon as he came round to give us a quote we felt relaxed and trusted him immediately…"</p>
+        <div class="who">Sam Smith</div><div class="when">Google</div></div>
+      <div class="card review"><span class="stars">★★★★★</span>
+        <p>"I honestly cannot praise the fantastic work Tom and his team did enough. In the middle of one of the hottest summers ever, he went out of his way to fit us in quickly - even working across a weekend for us…"</p>
+        <div class="who">Kathryn K</div><div class="when">Google</div></div>
+      <div class="card review"><span class="stars">★★★★★</span>
+        <p>"Had our air con fitted this weekend by Tom. From the moment my husband called to arrange a visit for a quote, to having it fitted Tom has been very efficient. Tom worked round us to make it convenient…"</p>
+        <div class="who">Joanne Cobon</div><div class="when">Google</div></div>
+    </div>
+    <!-- TODO: add link to Google reviews page once Tom has the share link -->
+    <p style="margin-top:20px"><a href="https://www.facebook.com/p/T-S-Cooling-Solutions-61582634784448/" target="_blank" rel="noopener">Read all reviews on Facebook →</a></p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Get a free quote</h2>
+    <p class="lead">Tell us what you need and Tom will get back to you.</p>
+    <div class="contact">
+      <!-- TODO: swap mailto for a form service (e.g. Formspree) so it works without an email app -->
+      <form action="mailto:tscoolingsolutions@yahoo.com" method="post" enctype="text/plain">
+        <div><label for="n">Name</label><input id="n" name="name" autocomplete="name" required></div>
+        <div><label for="p">Phone</label><input id="p" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+        <div><label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email"></div>
+        <div><label for="t">I'm interested in</label>
+          <select id="t" name="type"><option>Air conditioning install</option><option>Servicing / repair</option><option>Commercial</option><option>Not sure</option></select></div>
+        <div><label for="m">Message</label><textarea id="m" name="message" rows="4" placeholder="E.g. number of rooms, postcode, when you'd like it fitted"></textarea></div>
+        <button class="btn" type="submit">Request a quote</button>
+      </form>
+      <div>
+        <ul class="contact-list">
+          <li>📞 <a href="tel:+447546957344">07546 957344</a></li>
+          <li>💬 <a href="https://wa.me/447546957344" target="_blank" rel="noopener">WhatsApp us</a></li>
+          <li>✉️ <a href="mailto:tscoolingsolutions@yahoo.com">tscoolingsolutions@yahoo.com</a></li>
+          <li>📍 Covering <span class="todo">[area]</span></li>
+          <li>🕒 <span class="todo">[opening hours]</span></li>
+          <li>👍 <a href="https://www.facebook.com/p/T-S-Cooling-Solutions-61582634784448/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+        <img src="assets/gallery/job-12.jpg" alt="Close-up of a newly installed air conditioning unit" loading="lazy" style="border-radius:14px;max-height:320px;width:100%;object-fit:cover">
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="y"></span> T S Cooling Solutions · <a href="tel:+447546957344">07546 957344</a> · <a href="mailto:tscoolingsolutions@yahoo.com">tscoolingsolutions@yahoo.com</a></div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="tel:+447546957344"><span>📞</span>Call</a>
+  <a href="https://wa.me/447546957344" target="_blank" rel="noopener"><span>💬</span>WhatsApp</a>
+  <a class="q" href="#contact"><span>📝</span>Free quote</a>
+</div>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" aria-label="Close">✕</button>
+  <button class="lb-nav lb-prev" aria-label="Previous">‹</button>
+  <img alt="">
+  <button class="lb-nav lb-next" aria-label="Next">›</button>
+</div>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+// Mobile menu
+const menuBtn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+menuBtn.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open);
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false);
+}));
+
+// Gallery lightbox
+const imgs = [...document.querySelectorAll('.gallery img')];
+const lb = document.querySelector('.lightbox'), lbImg = lb.querySelector('img');
+let cur = 0;
+const show = i => { cur = (i + imgs.length) % imgs.length; lbImg.src = imgs[cur].src; lbImg.alt = imgs[cur].alt; lb.classList.add('open'); };
+document.querySelectorAll('.gallery button').forEach(b => b.addEventListener('click', () => show(+b.dataset.i)));
+lb.querySelector('.lb-close').onclick = () => lb.classList.remove('open');
+lb.querySelector('.lb-prev').onclick = e => { e.stopPropagation(); show(cur - 1); };
+lb.querySelector('.lb-next').onclick = e => { e.stopPropagation(); show(cur + 1); };
+lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') lb.classList.remove('open');
+  if (e.key === 'ArrowLeft') show(cur - 1);
+  if (e.key === 'ArrowRight') show(cur + 1);
+});
+// Swipe on mobile
+let sx = null;
+lb.addEventListener('touchstart', e => sx = e.touches[0].clientX, {passive:true});
+lb.addEventListener('touchend', e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1)); sx = null; });
+</script>
+</body>
+</html>
